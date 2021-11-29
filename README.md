@@ -42,7 +42,7 @@ Payload:
     "title": "Assignment One",
     "description": "This is a description.",
     "music_genre": "Rock Music",
-    "daily_practice_time": "00:08:00",
+    "daily_practice_time": 6,
     "days": 5,
     "days_practiced": 5
 }
@@ -56,7 +56,7 @@ Payload:
     "title": "Assignment One",
     "description": "This is a description.",
     "music_genre": "Rock Music",
-    "daily_practice_time": "00:08:00",
+    "daily_practice_time": 6,
     "days": 5,
     "days_practiced": 5
 }
@@ -78,7 +78,7 @@ request: http://127.0.0.1:8000/assignment/
         "title": "Assignment One",
         "description": "This is a description.",
         "music_genre": "Rock Music",
-        "daily_practice_time": "00:08:00",
+        "daily_practice_time": 6,
         "days": 5,
         "days_practiced": 5
     },
@@ -87,7 +87,7 @@ request: http://127.0.0.1:8000/assignment/
         "title": "Assignment Two",
         "description": "This is a description.",
         "music_genre": "Soul Music",
-        "daily_practice_time": "00:06:00",
+        "daily_practice_time": 8,
         "days": 5,
         "days_practiced": 4
     }
