@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from .models import Assignment
 
-class AssignmentSerializer(ModelSerializer):
+class AssignmentGetSerializer(ModelSerializer):
     musicGenre = SerializerMethodField()
     dailyPracticeTime = SerializerMethodField()
     daysPracticed = SerializerMethodField()
@@ -18,3 +18,8 @@ class AssignmentSerializer(ModelSerializer):
 
     def get_daysPracticed(self, obj):
         return obj.days_practiced
+
+class AssignmentPostSerializer(ModelSerializer): 
+    class Meta:
+        model = Assignment
+        fields = '__all__'  
