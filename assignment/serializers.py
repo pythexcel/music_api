@@ -1,25 +1,21 @@
-from rest_framework.serializers import ModelSerializer, SerializerMethodField
+from rest_framework.serializers import ModelSerializer, CharField, IntegerField
 from .models import Assignment
 
-class AssignmentGetSerializer(ModelSerializer):
-    musicGenre = SerializerMethodField()
-    dailyPracticeTime = SerializerMethodField()
-    daysPracticed = SerializerMethodField()
+class AssignmentSerializer(ModelSerializer):
+
+    musicGenre = CharField(source="music_genre")
+    dailyPracticeTime = IntegerField(source="daily_practice_time")
+    daysPracticed = IntegerField(source="days_practiced")
 
     class Meta:
         model = Assignment
-        fields = ['title', 'description', 'musicGenre', 'dailyPracticeTime', 'days', 'daysPracticed']
-
-    def get_musicGenre(self, obj):
-        return obj.music_genre
-
-    def get_dailyPracticeTime(self, obj):
-        return obj.daily_practice_time
-
-    def get_daysPracticed(self, obj):
-        return obj.days_practiced
-
-class AssignmentPostSerializer(ModelSerializer): 
-    class Meta:
-        model = Assignment
-        fields = '__all__'  
+        fields = [
+            'id', 
+            'title', 
+            'description', 
+            'musicGenre', 
+            'dailyPracticeTime', 
+            'days', 
+            'daysPracticed'
+        ]
+ 
